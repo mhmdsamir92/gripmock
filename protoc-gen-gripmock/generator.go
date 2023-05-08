@@ -34,6 +34,7 @@ func main() {
 	// Initialise our plugin with default options
 	opts := protogen.Options{}
 	plugin, err := opts.New(&request)
+	plugin.SupportedFeatures = uint64(pluginpb.CodeGeneratorResponse_FEATURE_PROTO3_OPTIONAL)
 	if err != nil {
 		log.Fatalf("error initializing plugin: %v", err)
 	}
